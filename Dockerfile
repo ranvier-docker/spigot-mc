@@ -1,4 +1,4 @@
-FROM openjdk:jdk-slim AS build-env
+FROM openjdk:13-slim AS build-env
 
 ARG VERSION=latest
 
