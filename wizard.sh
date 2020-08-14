@@ -4,7 +4,7 @@ ACTION=$1
 SAVE_DIR='./build/'
 
 build(){
-  docker build --build-arg VERSION=1.16.1 -t ranvier/spigot-mc:1.16.1 .
+  docker build --build-arg VERSION=1.16.2 -t ranvier/spigot-mc:1.16.1 .
   docker build --build-arg VERSION=latest -t ranvier/spigot-mc:latest .
 }
 
