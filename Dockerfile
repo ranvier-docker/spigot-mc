@@ -1,4 +1,7 @@
-FROM openjdk:16-slim AS build-env
+#FROM openjdk:16-slim AS build-env
+FROM openjdk:16-slim
+
+ARG VERSION
 
 RUN mkdir /app
 
@@ -12,7 +15,8 @@ RUN java -jar BuildTools.jar --rev ${VERSION}
 
 RUN cp /tmp/spigot-*.jar /app/server.jar
 
-FROM gcr.io/distroless/java
+# FROM gcr.io/distroless/java:16
+RUN rm -rf /tmp/*
 
 COPY --from=build-env /app /app
 
