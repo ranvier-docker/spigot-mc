@@ -16,9 +16,9 @@ RUN java -jar BuildTools.jar --rev ${VERSION}
 RUN cp /tmp/spigot-*.jar /app/server.jar
 
 # FROM gcr.io/distroless/java:16
-RUN rm -rf /tmp/*
+# COPY --from=build-env /app /app
 
-COPY --from=build-env /app /app
+RUN rm -rf /tmp/*
 
 WORKDIR /data
 
