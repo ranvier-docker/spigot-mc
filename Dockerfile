@@ -1,7 +1,5 @@
 FROM openjdk:16-slim AS build-env
 
-ARG VERSION=latest
-
 RUN mkdir /app
 
 WORKDIR /tmp
